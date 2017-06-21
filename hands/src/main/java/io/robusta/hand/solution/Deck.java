@@ -2,11 +2,9 @@ package io.robusta.hand.solution;
 
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Random;
 import java.util.TreeSet;
 
 import io.robusta.hand.Card;
-import io.robusta.hand.CardColor;
 import io.robusta.hand.interfaces.IDeck;
 
 public class Deck extends LinkedList<Card> implements IDeck{
@@ -20,9 +18,11 @@ public class Deck extends LinkedList<Card> implements IDeck{
 	
 	@Override
 	public Card pick() {
+		
 		// shuffle;
 		// remove card from deck and returns it
-		return null;
+		Collections.shuffle(this);	
+		return this.pollFirst();
 	}
 
 
@@ -30,16 +30,24 @@ public class Deck extends LinkedList<Card> implements IDeck{
 
 	@Override
 	public TreeSet<Card> pick(int number) {
+		int i= 0;
+		TreeSet<Card> cards=new TreeSet<>();
 		// reuse pick()
-		return null;
+		while(i<number){
+			cards.add(this.pick());	
+			i++;
+		}
+		return cards;
 	}
 
+	
+	
 	@Override
 	public Hand giveHand() {
-		// A hand is a **5** card TreeSet
-		return null;
+		Hand hand = new Hand();
+		hand.addAll(pick(5));
+		return hand;
 	}
 	
-	
-	
+	// A hand is a **5** card TreeSet
 }
