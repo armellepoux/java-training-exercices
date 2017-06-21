@@ -1,5 +1,6 @@
 package io.robusta.hand.solution;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,13 +18,6 @@ public class Hand extends TreeSet<Card> implements IHand {
 
 	private static final long serialVersionUID = 7824823998655881611L;
 
-	@Override
-	public Set<Card> changeCards(IDeck deck, Set<Card> cards) {
-		// For exemple remove three cards from this hand
-		// , and get 3 new ones from the Deck
-		// returns the new given cards
-		return null;
-	}
 
 	/**
 	 * beats is the same than compareTo, but with a nicer name. The problem is
@@ -98,16 +92,11 @@ public class Hand extends TreeSet<Card> implements IHand {
 	@Override
 	public Map<Integer, List<Card>> group() {
 		
-	}
+	
 		HashMap<Integer, List<Card>> map = new HashMap<>();
 		ArrayList<Card> mapCards=new ArrayList<>();
 
-		for(Card c : this){
-		if(){
-
-		}
-		 map.put(arg0, arg1)
-		// fill the map
+	
 
 		return map;
 	}
@@ -227,6 +216,12 @@ public class Hand extends TreeSet<Card> implements IHand {
 	public int compareTo(IHandResolver o) {
 		// You should reuse HandValue.compareTo()
 		return 0;
+	}
+
+	@Override
+	public Set<Card> changeCards(IDeck deck, Set<Card> cards) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
