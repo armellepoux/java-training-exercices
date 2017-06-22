@@ -46,7 +46,7 @@ public class ArrayAppTest {
 
     @Test
     public void asStringJoin() throws Exception {
-        int[] a1 = {2,4,6, 8, 10};
+        int[] a1 = {2,4,6,8,10};
         assertEquals("2:4:6:8:10",app.asStringJoin(a1));
     }
 
